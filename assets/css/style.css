@@ -15,7 +15,8 @@
     padding: 0 7px;
 }
 
-.title div .time_remain {
+.time_remain,
+.seconds {
     font-weight: 400;
     font-size: 15px;
     text-align: center;
@@ -48,6 +49,29 @@
     padding: 0 175px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 250;
+}
+
+.quiz_questions section {
+    padding: 0 25px;
+
+}
+
+.quiz_questions .option_list {
+    padding: 15px 0;
+}
+section .option_list .choices:hover {
+    background-color: white;
+}
+
+.quiz_questions .option_list .choices {
+    font-size: 20px;
+    background: lightgray;
+    border: 1px solid darkgray;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    justify-content: space-between;
+    cursor: pointer;
 }
