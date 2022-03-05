@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="assets\css\style.css">
 </head>
+
 <body>
-    
+    <!--title of quiz and countdown timer-->
+    <header class="title">
+        <h1 class="heading">Code Quiz!</h1>
+        <div class="timer">
+            <div class="time_remain">Time Remaining:</div>
+            <div class="seconds">60</div>
+        </div>
+    </header>
+    <!--Start Quiz-->
+    <div class="button">
+        <button>Start Quiz</button>
+    </div>
+
+    <div class="quiz_questions">
+        <section>
+            <div class="questions">
+                <span>1. How does a while loop start?</span>
+            </div>
+            <div class="option_list">
+                <div class="choices">
+                    <span>while i=1 to 10</span>
+                </div>
+                <div class="choices">
+                    <span>while (i<=10)**< /span>
+                </div>
+                <div class="choices">
+                    <span>while (i<=10; i++)</span>
+                </div>
+                <div class="choices">
+                    <span>while (i)</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="que">
+                <span>
+                <p>1</p>
+                of
+                <p>5</p>
+                Questions
+                </span>
+                <button class="next">Next Question</button>
+        </footer>
+    </div>
+
+
 </body>
+
 </html>
