@@ -2,7 +2,7 @@
 let questions = [
     {
        numb: 1, 
-       question: "1. How does a while loop start?",
+       question: "How does a while loop start?",
        answer: "while (i<=10)",
        options: [
            "while i=1 to 10",
@@ -14,7 +14,7 @@ let questions = [
 
     {
         numb: 2, 
-        question: "2. Where us the correct place to insert a JavaScript?",
+        question: "Where us the correct place to insert a JavaScript?",
         answer: "The <body> section",
         options: [
             "The <head> section",
@@ -26,7 +26,7 @@ let questions = [
 
      {
         numb: 3, 
-        question: "3. What is the correct format to create a function in javaScript?",
+        question: "What is the correct format to create a function in javaScript?",
         answer: "function myFunction()",
         options: [
             "function myFunction()",
@@ -38,7 +38,7 @@ let questions = [
 
      {
         numb: 4, 
-        question: "4. How does the code look for if statements that are not equal to 8?",
+        question: "How does the code look for if statements that are not equal to 8?",
         answer: "if(i !=8)",
         options: [
             "if i=!8 then",
@@ -50,7 +50,7 @@ let questions = [
 
      {
         numb: 5, 
-        question: "5. Under which HTML element do we put the JavaScript?",
+        question: "Under which HTML element do we put the JavaScript?",
         answer: "script tag",
         options: [
             "js tag",

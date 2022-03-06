@@ -8,16 +8,29 @@ var  quit= document.querySelector(".end-buttons .quit")
 //There will be a start button to begin the quiz
 startButton.onclick = function() {
     quizQuest.classList.add("activeQuiz");
-    displayQuestions(3);
+    displayQuestions();
 }
 
 let questionCount = 0;
 
+var nextButton = quizQuest.querySelector(".next");
+
+//when the next button is clicked, the next question and answer choices will show up
+nextButton.onclick = function() {
+    if(questionCount < questions.length - 1) {
+    questionCount++;
+    displayQuestions(questionCount);
+    }
+    else {
+        console.log("Questions completed");
+    }
+}
+
 //pull questions from questions.js
 function displayQuestions(i) {
-    var questionText = document.querySelector(".quiz-question");
+    var questionText = document.querySelector(".quiz-quest");
     var optionsList = document.querySelector(".option-list");
-    let questionTag = '<span>'+ questions[i].question +'</span>';
+    let questionTag = '<span>'+ questions[i].numb + "." + questions[i].question +'</span>';
     let optionsTag = '<div class="choices">'+ questions[i].options[0] +'<span></span></div>'
                     + '<div class="choices">'+ questions[i].options[1] +'<span></span></div>'
                     + '<div class="choices">'+ questions[i].options[2] +'<span></span></div>'
