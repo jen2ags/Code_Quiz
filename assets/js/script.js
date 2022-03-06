@@ -5,10 +5,70 @@ var  tryAgain= document.querySelector(".end-buttons .try-again")
 var  quit= document.querySelector(".end-buttons .quit")
 
 
+//array with all of my questions and answers in them
+ questions = [
+    {
+       question: "1. How does a while loop start?",
+       answer: "while (i<=10)",
+       options: [
+           "while i=1 to 10",
+           "while (i<=10)",
+           "while (i<=10; i++)",
+           "while (i)"
+       ]
+    },
+
+    { 
+        question: "2. Where us the correct place to insert a JavaScript?",
+        answer: "The <body> section",
+        options: [
+            "The head section",
+            "Both the head section and the body section are correct",
+            "The body section",
+            "The header section"
+        ]
+     },
+
+     { 
+        question: "3. What is the correct format to create a function in javaScript?",
+        answer: "function myFunction()",
+        options: [
+            "function myFunction()",
+            "function:myFunction()",
+            "function=myFunction()",
+            "var myFunction()"
+        ]
+     },
+
+     { 
+        question: "4. How does the code look for if statements that are not equal to 8?",
+        answer: "if(i !=8)",
+        options: [
+            "if i=!8 then",
+            "if i<>8",
+            "if(i<>8)",
+            "if(i !=8)"
+        ]
+     },
+
+     { 
+        question: "5. Under which HTML element do we put the JavaScript?",
+        answer: "script tag",
+        options: [
+            "js tag",
+            "javascript tag",
+            "script tag",
+            "scripting tag"
+        ]
+     },
+
+     
+]
+
 //There will be a start button to begin the quiz
 startButton.onclick = function() {
     quizQuest.classList.add("activeQuiz");
-    displayQuestions();
+    displayQuestions(questionCount);
 }
 
 let questionCount = 0;
@@ -38,20 +98,23 @@ function displayQuestions(i) {
     questionText.innerHTML = questionTag;
     optionsList.innerHTML = optionsTag;
 
-    var choices =optionsList.querySelector(".choices");
-        for (let i=0; i < optionsList.length; index++) {
+    var choices = optionsList.querySelectorAll(".choices");
+        for (let i=0; i < choices.length; i++) {
             choices[i].setAttribute("onclick", "choicesSelected(this)");
         }
 
 }
-
+//answers that the user picks are correct or incorrect
 function choicesSelected(answer) {
     let selection = answer.textContent;
+    console.log(selection);
     let correct = questions[questionCount].answer;
-    if(selection ===correct) {
+    if(selection === correct) {
+        answer.classList.add("correct");
     console.log("Answer is correct");
     }
     else {
+        answer.classList.add("incorrect");
         console.log("Answer is wrong");
     }
 }

@@ -112,6 +112,16 @@ section .option-list .choices:hover {
     cursor: pointer;
 }
 
+.option-list .choices.correct {
+    background: lightgreen;
+    border: 1px solid green;
+}
+
+.option-list .choices.incorrect {
+    background: tomato;
+    border: 1px solid red;
+}
+
 .quiz-questions footer {
     height: 50px;
     width: 100%;
