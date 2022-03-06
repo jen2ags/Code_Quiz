@@ -32,12 +32,14 @@
     transform: translate(-50%, -50%);
 }
 
-.quiz-questions .activeQuiz {
+.quiz-questions.activeQuiz {
     opacity: 1;
     pointer-events: auto;
     z-index: 5;
     transform: translate(-50%, -50%) scale(1);
 }
+
+
 
 .quiz-directions .directions {
     position: relative;
@@ -70,7 +72,7 @@
 }
 
 .quiz-questions {
-    width: 600px;
+    width: 950px;
     background: #008B8B;
     border-radius: 25px;
     opacity: 0;
@@ -79,9 +81,10 @@
 
 .questions{
     height: 100px;
-    padding: 0 175px;
+    padding: 0 250px;
     display: flex;
     align-items: center;
+    text-align: center;
     font-size: 30px;
     font-weight: 250;
 }
@@ -114,7 +117,7 @@ section .option-list .choices:hover {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0 25px 15px 415px;
+    padding: 0 25px 15px 400px;
 }
 footer .next {
     font-size: 20px;

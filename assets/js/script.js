@@ -4,11 +4,13 @@ var quizQuest = document.querySelector(".quiz-questions")
 var  tryAgain= document.querySelector(".end-buttons .try-again")
 var  quit= document.querySelector(".end-buttons .quit")
 
+
 //There will be a start button to begin the quiz
-document.getElementsByClassName("start-button").onclick = function() {
-    quizQuest.classList.add(quizQuest);
+startButton.onclick = function() {
+    quizQuest.classList.add("activeQuiz");
 }
 
+let questionCount = 0;
 
 
 //Once the start button is clicked, the first question will show and the timer will start the countdown from 60 seconds
@@ -21,36 +23,6 @@ function startTimer(duration, display) {
     })
 }
 
-//5 questions on the quiz
-//1. How does a while loop start?
-//while i=1 to 10
-//while (i<=10)**
-//while (i<=10; i++)
-//while (i)
-
-//2. How do you write Good Luck! in an alert box?
-//alertBox("Good Luck!");
-//alert("Good Luck!");**
-//msgBox("Good Luck");
-//msg("good Luck");
-
-//3. What is the correct format to create a function in javaScript?
-//function myFunction()**
-//function:myFunction()
-//function=myFunction()
-//var myFunction()
-
-//4. How does the code look for if statements that are not equal to 8?
-//if i=!8 then
-//if i<>8
-//if(i<>8)
-//if(i !=8)**
-
-//5. What format do you use to add a comment in javaScript?
-//!--This is a comment--
-//'This is a comment'
-////This is a comment**
-//"This is a comment"
 
 
 
