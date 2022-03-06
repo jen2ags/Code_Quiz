@@ -122,6 +122,11 @@ section .option-list .choices:hover {
     border: 1px solid red;
 }
 
+.option-list .choices.disable {
+    pointer-events: none;
+    
+}
+
 .quiz-questions footer {
     height: 50px;
     width: 100%;

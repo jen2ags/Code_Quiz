@@ -1,8 +1,10 @@
 
-var startButton = document.querySelector(".quiz-directions .start-button")
-var quizQuest = document.querySelector(".quiz-questions")
-var  tryAgain= document.querySelector(".end-buttons .try-again")
-var  quit= document.querySelector(".end-buttons .quit")
+var startButton = document.querySelector(".quiz-directions .start-button");
+var quizQuest = document.querySelector(".quiz-questions");
+var  tryAgain= document.querySelector(".end-buttons .try-again");
+var  quit= document.querySelector(".end-buttons .quit");
+var optionsList = document.querySelector(".option-list");
+var countdownTimer = document.querySelector(".timer .seconds")
 
 
 //array with all of my questions and answers in them
@@ -69,9 +71,11 @@ var  quit= document.querySelector(".end-buttons .quit")
 startButton.onclick = function() {
     quizQuest.classList.add("activeQuiz");
     displayQuestions(questionCount);
+    startTimer(60);
 }
 
 let questionCount = 0;
+let timer;
 
 var nextButton = quizQuest.querySelector(".next");
 
@@ -89,7 +93,6 @@ nextButton.onclick = function() {
 //pull questions from questions.js and
 function displayQuestions(i) {
     var questionText = document.querySelector(".quiz-quest");
-    var optionsList = document.querySelector(".option-list");
     let questionTag = '<span>'+ questions[i].question +'</span>';
     let optionsTag = '<div class="choices">'+ questions[i].options[0] +'<span></span></div>'
                     + '<div class="choices">'+ questions[i].options[1] +'<span></span></div>'
@@ -104,11 +107,12 @@ function displayQuestions(i) {
         }
 
 }
-//answers that the user picks are correct or incorrect
+//When the question is answered, the user will be told if it is correct or incorrect
 function choicesSelected(answer) {
     let selection = answer.textContent;
     console.log(selection);
     let correct = questions[questionCount].answer;
+    let options = optionsList.children.length;
     if(selection === correct) {
         answer.classList.add("correct");
     console.log("Answer is correct");
@@ -117,16 +121,22 @@ function choicesSelected(answer) {
         answer.classList.add("incorrect");
         console.log("Answer is wrong");
     }
+
+
+//user can only select one answer choice and will not allow a change
+for (let i = 0; i < options; i++) {
+    optionsList.children[i].classList.add("disable");
+}
 }
 
 //Once the start button is clicked, the first question will show and the timer will start the countdown from 60 seconds
 //timer function that is global and set interval to countdown
-function startTimer(duration, display) {
-    var timer = duration, seconds;
-    setInterval(function() {
-        seconds = parseInt(timer % 60, 10);
-        
-    })
+function startTimer(timeLeft) {
+    timer = setInterval(timer, 1000);
+    function timer() {
+        countdownTimer.textContent = timeLeft;
+        timeLeft--;
+    }
 }
 
 
@@ -134,9 +144,9 @@ function startTimer(duration, display) {
 
 
 
-//When the question is answered, the user will be told if it is correct or incorrect
 //if the question was correct, it will move on to the next question with out penalty
-//if the question was incorrect, it will notify you it was wrong, the timer will deduct 10 seconds and the next question will show
+//if the question was incorrect, it will notify you it was wrong
+//the timer will deduct 10 seconds and the next question will show
 //after question 5, the quiz will end and the timer will stop
 //the user's answers will be recorded as correct or incorrect and a score will be displayed 
 //after the last question, the user's score is displayed on the screen and they will need to input their initials
