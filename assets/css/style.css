@@ -32,7 +32,8 @@
     transform: translate(-50%, -50%);
 }
 
-.quiz-questions.activeQuiz {
+.quiz-questions.activeQuiz,
+.results.activeResults {
     opacity: 1;
     pointer-events: auto;
     z-index: 5;
@@ -124,7 +125,7 @@ section .option-list .choices:hover {
 
 .option-list .choices.disable {
     pointer-events: none;
-    
+
 }
 
 .quiz-questions footer {
@@ -151,7 +152,8 @@ footer .next:hover {
     background: lightgrey;
     border-radius: 5px;
     border: 1px solid black;
-    width: 300px;
+    width: 950px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
