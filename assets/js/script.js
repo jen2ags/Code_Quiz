@@ -15,7 +15,7 @@ let questionCount = 0;
 
 var nextButton = quizQuest.querySelector(".next");
 
-//when the next button is clicked, the next question and answer choices will show up
+//when the next button is clicked, the next question and answer choices will show up until the last question is shown
 nextButton.onclick = function() {
     if(questionCount < questions.length - 1) {
     questionCount++;
@@ -26,11 +26,11 @@ nextButton.onclick = function() {
     }
 }
 
-//pull questions from questions.js
+//pull questions from questions.js and
 function displayQuestions(i) {
     var questionText = document.querySelector(".quiz-quest");
     var optionsList = document.querySelector(".option-list");
-    let questionTag = '<span>'+ questions[i].numb + "." + questions[i].question +'</span>';
+    let questionTag = '<span>'+ questions[i].question +'</span>';
     let optionsTag = '<div class="choices">'+ questions[i].options[0] +'<span></span></div>'
                     + '<div class="choices">'+ questions[i].options[1] +'<span></span></div>'
                     + '<div class="choices">'+ questions[i].options[2] +'<span></span></div>'
@@ -38,6 +38,22 @@ function displayQuestions(i) {
     questionText.innerHTML = questionTag;
     optionsList.innerHTML = optionsTag;
 
+    var choices =optionsList.querySelector(".choices");
+        for (let i=0; i < optionsList.length; index++) {
+            choices[i].setAttribute("onclick", "choicesSelected(this)");
+        }
+
+}
+
+function choicesSelected(answer) {
+    let selection = answer.textContent;
+    let correct = questions[questionCount].answer;
+    if(selection ===correct) {
+    console.log("Answer is correct");
+    }
+    else {
+        console.log("Answer is wrong");
+    }
 }
 
 //Once the start button is clicked, the first question will show and the timer will start the countdown from 60 seconds
