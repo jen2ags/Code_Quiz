@@ -8,10 +8,24 @@ var  quit= document.querySelector(".end-buttons .quit")
 //There will be a start button to begin the quiz
 startButton.onclick = function() {
     quizQuest.classList.add("activeQuiz");
+    displayQuestions(3);
 }
 
 let questionCount = 0;
 
+//pull questions from questions.js
+function displayQuestions(i) {
+    var questionText = document.querySelector(".quiz-question");
+    var optionsList = document.querySelector(".option-list");
+    let questionTag = '<span>'+ questions[i].question +'</span>';
+    let optionsTag = '<div class="choices">'+ questions[i].options[0] +'<span></span></div>'
+                    + '<div class="choices">'+ questions[i].options[1] +'<span></span></div>'
+                    + '<div class="choices">'+ questions[i].options[2] +'<span></span></div>'
+                    + '<div class="choices">'+ questions[i].options[3] +'<span></span></div>';
+    questionText.innerHTML = questionTag;
+    optionsList.innerHTML = optionsTag;
+
+}
 
 //Once the start button is clicked, the first question will show and the timer will start the countdown from 60 seconds
 //timer function that is global and set interval to countdown

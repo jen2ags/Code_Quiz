@@ -19,7 +19,8 @@ let questions = [
         options: [
             "The <head> section",
             "Both the <head> section and the <body> section are correct",
-            "The <body> section"
+            "The <body> section",
+            "The <header> section"
         ]
      },
 

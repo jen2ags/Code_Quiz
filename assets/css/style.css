@@ -79,7 +79,7 @@
     pointer-events: none;
 }
 
-.questions{
+.quiz-quest{
     height: 100px;
     padding: 0 250px;
     display: flex;
